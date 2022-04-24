@@ -1,3 +1,15 @@
 <resources>
-    <string name="app_name">RunningTrackingApp</string>
+    <string name="app_name">Running Tracking App</string>
+    <string name="google_maps_key" translatable="false">AIzaSyCN4WJRbeLdQhIidnhzNvzT0cLh4W9SteA</string>
+
+    <string-array name="filter_options">
+        <item>Date</item>
+        <item>Running Time</item>
+        <item>Distance</item>
+        <item>Average Speed</item>
+        <item>Calories Burned</item>
+    </string-array>
+    <string name="request_location_permission">This app needs your permission to work properly</string>
+    <string name="start_run_btn">Start</string>
+    <string name="stop_run_btn">Stop</string>
 </resources>

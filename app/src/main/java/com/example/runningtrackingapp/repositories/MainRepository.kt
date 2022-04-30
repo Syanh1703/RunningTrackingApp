@@ -11,9 +11,9 @@ class MainRepository  @Inject constructor(
     val runDAO: RunDAO
 ){
     //Call the function of the Run DAO
-    suspend fun insertRun(run:Run) = runDAO.insertRun(run)
+    suspend fun insertRunFromMainRepository(run:Run) = runDAO.insertRunFromRunDAO(run)
 
-    suspend fun deleteRun(run: Run) = runDAO.deleteRun(run)
+    suspend fun deleteRunFromMainRepository(run: Run) = runDAO.deleteRunFromRunDAO(run)
 
     fun getAllRunSortedByDate() = runDAO.getAllRunsSortedByDate()
 

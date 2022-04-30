@@ -13,7 +13,7 @@ data class Run (
     var avgSpeedInKMH:Float = 0f,
     var distanceInMater :Float = 0f,
     var timeInMillis:Long = 0L, //Determines the time of each run
-    var caloriesBurnt :Float = 0f)
+    var caloriesBurnt :Int = 0)
 {
     @PrimaryKey(autoGenerate = true)
     var id :Int? = null

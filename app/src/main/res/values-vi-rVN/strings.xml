@@ -4,4 +4,9 @@
     <string name="request_location_permission">Bạn cần cung cấp quyền truy cập vị trí để sử dụng</string>
     <string name="start_run_btn">Bắt đầu</string>
     <string name="stop_run_btn">Kết thúc</string>
+    <string name="resume_run">Tiếp tục</string>
+    <string name="pause_run">Tạm dừng</string>
+    <string name="cancel_tracking">Huỷ theo dõi</string>
+    <string name="confirm_cancel">Bạn có chắc chắn muốn huỷ lần chạy này?</string>
+    <string name="run_saved">Thành tích của bạn đã được lưu thành công</string>
 </resources>

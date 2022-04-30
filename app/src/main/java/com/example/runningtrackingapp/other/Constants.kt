@@ -24,9 +24,16 @@ object Constants {
     const val FASTEST_LOCATION_UPDATE_INTERVAL = 1500L
 
     //Polyline Colors and Width
-    const val POLYLINE_COLOR = R.color.errorColor
+    const val POLYLINE_COLOR = R.color.md_blue_500
     const val POLYLINE_WIDTH = 8f
 
     //Camera zoom
     const val MAP_CAMERA_ZOOM = 20f
+
+    //Delay time for coroutine
+    const val DELAY_COROUTINE_TIME = 50L
+
+    //Code for current notificaiton
+    const val PAUSE_CURRENT_NOTIFICATION_CODE = 1
+    const val RESUME_CURRENT_NOTIFICATION = 2
 }

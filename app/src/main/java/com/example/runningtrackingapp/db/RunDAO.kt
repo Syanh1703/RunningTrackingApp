@@ -7,11 +7,11 @@ import androidx.room.*
 interface RunDAO {
     //Insert New Run
     @Insert(onConflict = OnConflictStrategy.REPLACE)//The new run will replace the old run
-    suspend fun insertRun(run:Run)
+    suspend fun insertRunFromRunDAO(run:Run)
 
     //Delete the run
     @Delete
-    suspend fun deleteRun(run:Run)
+    suspend fun deleteRunFromRunDAO(run:Run)
 
     //Sort the run by date, the latest run on top
     @Query("SELECT * FROM running_table ORDER BY timestamp DESC")

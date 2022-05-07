@@ -18,7 +18,7 @@ interface RunDAO {
     fun getAllRunsSortedByDate(): LiveData<List<Run>>
 
     //Sort the run by distance, the longest on top
-    @Query("SELECT * FROM running_table ORDER BY distanceInMater DESC")
+    @Query("SELECT * FROM running_table ORDER BY distanceInMeter DESC")
     fun getAllRunsSortedByDistance():LiveData<List<Run>>
 
     //Sort the run by time finished, the longest on top
@@ -38,7 +38,7 @@ interface RunDAO {
     fun getTotalTimeInMillis():LiveData<Long>
 
     //For Statistics Fragment
-    @Query("SELECT SUM(distanceInMater) FROM running_table")
+    @Query("SELECT SUM(distanceInMeter) FROM running_table")
     fun getTotalDistance():LiveData<Float>
 
     //For Statistics Fragment

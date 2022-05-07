@@ -11,7 +11,7 @@ data class Run (
     var img:Bitmap? = null,
     var timeStamp:Long = 0L, //Determine the date of the run
     var avgSpeedInKMH:Float = 0f,
-    var distanceInMater :Float = 0f,
+    var distanceInMeter :Float = 0f,
     var timeInMillis:Long = 0L, //Determines the time of each run
     var caloriesBurnt :Int = 0)
 {

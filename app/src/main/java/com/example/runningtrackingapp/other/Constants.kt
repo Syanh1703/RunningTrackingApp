@@ -33,7 +33,16 @@ object Constants {
     //Delay time for coroutine
     const val DELAY_COROUTINE_TIME = 50L
 
-    //Code for current notificaiton
+    //Code for current notification
     const val PAUSE_CURRENT_NOTIFICATION_CODE = 1
     const val RESUME_CURRENT_NOTIFICATION = 2
+
+    //Shared Preferences
+    const val SHARED_PREFERENCES_NAME = "sharePref"
+    const val KEY_FIRST_TIME_TOGGLE = "KEY_FIRST_TIME_TOGGLE"
+    const val KEY_USER_NAME = "KEY_USER_NAME"
+    const val KEY_USER_WEIGHT = "KEY_USER_WEIGHT"
+
+    //Cancel Tracking Dialog Tag
+    const val CANCEL_TRACKING_DIALOG_TAG = "Cancel Dialog"
 }

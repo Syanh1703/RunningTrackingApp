@@ -6,7 +6,6 @@ import android.app.NotificationManager
 import android.app.NotificationManager.IMPORTANCE_LOW
 import android.app.PendingIntent
 import android.app.PendingIntent.FLAG_IMMUTABLE
-import android.app.PendingIntent.getActivities
 import android.content.Context
 import android.content.Intent
 import android.location.Location
@@ -18,7 +17,6 @@ import androidx.lifecycle.LifecycleService
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.example.runningtrackingapp.R
-import com.example.runningtrackingapp.other.Constants.ACTION_SHOW_TRACKING_FRAGMENT
 import com.example.runningtrackingapp.other.Constants.DELAY_COROUTINE_TIME
 import com.example.runningtrackingapp.other.Constants.FASTEST_LOCATION_UPDATE_INTERVAL
 import com.example.runningtrackingapp.other.Constants.LOCATION_UPDATE_INTERVAL
@@ -31,7 +29,6 @@ import com.example.runningtrackingapp.other.Constants.TRACKING_SERVICE_PAUSE
 import com.example.runningtrackingapp.other.Constants.TRACKING_SERVICE_START_OR_RESUME
 import com.example.runningtrackingapp.other.Constants.TRACKING_SERVICE_STOP
 import com.example.runningtrackingapp.other.TrackingUtility
-import com.example.runningtrackingapp.ui.MainActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest.PRIORITY_HIGH_ACCURACY
@@ -61,7 +58,7 @@ class TrackingServices : LifecycleService() {
     @Inject
     lateinit var baseNotificationBuilder: NotificationCompat.Builder
 
-    lateinit var currentNotificatioBuilder: NotificationCompat.Builder
+    lateinit var currentNotificationBuilder: NotificationCompat.Builder
 
     //Variables for stopwatch
     private val timeRunInSeconds = MutableLiveData<Long>()
@@ -84,7 +81,7 @@ class TrackingServices : LifecycleService() {
 
     override fun onCreate() {
         super.onCreate()
-        currentNotificatioBuilder = baseNotificationBuilder
+        currentNotificationBuilder = baseNotificationBuilder
         postInitialValue()
         fuseLocationProviderClient = FusedLocationProviderClient(this)
 
@@ -105,7 +102,7 @@ class TrackingServices : LifecycleService() {
          * 3. Stop the tracking
          */
         intent?.let {
-            when (intent.action) {
+            when (it.action) {
                 TRACKING_SERVICE_START_OR_RESUME -> {
                     //Call out the startForeground Service function
                     if (isFirstRun) {
@@ -216,16 +213,16 @@ class TrackingServices : LifecycleService() {
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
         //Swipe out the action when the user click on it
-        currentNotificatioBuilder.javaClass.getDeclaredField("mActions").apply {
+        currentNotificationBuilder.javaClass.getDeclaredField("mActions").apply {
             isAccessible = true
             //Set these to an empty list
-            set(currentNotificatioBuilder, ArrayList<NotificationCompat.Action>())
+            set(currentNotificationBuilder, ArrayList<NotificationCompat.Action>())
         }
         if(!isServiceKilled)
         {
-            currentNotificatioBuilder = baseNotificationBuilder
+            currentNotificationBuilder = baseNotificationBuilder
                 .addAction(R.drawable.ic_pause, notificationActionText, pendingIntent)
-            notificationManager.notify(NOTIFICATION_ID, currentNotificatioBuilder.build())
+            notificationManager.notify(NOTIFICATION_ID, currentNotificationBuilder.build())
         }
     }
 
@@ -309,8 +306,8 @@ class TrackingServices : LifecycleService() {
         timeRunInSeconds.observe(this) {
             //Observe the data
             if (!isServiceKilled) {
-                val notification = currentNotificatioBuilder
-                    .setContentText(TrackingUtility.getFormattedStopWatchTime(it * 1000L, false))
+                val notification = currentNotificationBuilder
+                    .setContentText(TrackingUtility.getFormattedStopWatchTime(it * 1000L))
                 notiManager.notify(NOTIFICATION_ID, notification.build())
             }
         }

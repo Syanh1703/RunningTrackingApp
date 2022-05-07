@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/setUpFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
+    app:startDestination="@id/setupFragment">
 
     <action android:id="@+id/action_global_trackingFragment"
-        app:destination="@+id/trackingFragment"
-        app:launchSingleTop="true"/>
+        app:destination="@id/trackingFragment"
+        app:launchSingleTop="true" />
 
     <fragment
         android:id="@+id/runFragments"
@@ -17,11 +16,11 @@
             app:destination="@id/trackingFragment" />
     </fragment>
     <fragment
-        android:id="@+id/setUpFragment"
+        android:id="@+id/setupFragment"
         android:name="com.example.runningtrackingapp.ui.fragments.SetUpFragment"
-        android:label="SetUpFragment" >
+        android:label="SetupFragment" >
         <action
-            android:id="@+id/action_setUpFragment_to_runFragments"
+            android:id="@+id/action_setupFragment_to_runFragments"
             app:destination="@id/runFragments" />
     </fragment>
     <fragment
@@ -37,7 +36,7 @@
             app:destination="@id/runFragments" />
     </fragment>
     <fragment
-        android:id="@+id/settingsFragment2"
+        android:id="@+id/settingsFragment"
         android:name="com.example.runningtrackingapp.ui.fragments.SettingsFragment"
         android:label="SettingsFragment" />
 </navigation>

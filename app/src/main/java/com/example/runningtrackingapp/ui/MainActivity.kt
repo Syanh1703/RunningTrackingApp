@@ -23,15 +23,19 @@ class MainActivity : AppCompatActivity() {
 
         navigateToTrackingFragmentIfNeeded(intent)
 
-        //setSupportActionBar(toolbar)
+        setSupportActionBar(toolbar)
         //Set up bottom Navigation
         bottomNavigationView.setupWithNavController(navHostFragment.findNavController())
+        bottomNavigationView.setOnItemReselectedListener {
+            //Prevent reloading the Fragment if we click the fragment the second time
+
+        }
 
         //Add Destination change list the fragments
         navHostFragment.findNavController()
             .addOnDestinationChangedListener { _, destination, _ ->
                 when (destination.id) {
-                    R.id.settingsFragment, R.id.runFragment, R.id.setUpFragment -> {
+                    R.id.settingsFragment, R.id.runFragment, R.id.statsFragment -> {
                         bottomNavigationView.visibility = View.VISIBLE
                         //Show up the navigation when those fragments chosen
                     }

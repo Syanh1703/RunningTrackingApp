@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Running Tracking App</string>
-    <string name="google_maps_key" translatable="false">AIzaSyCN4WJRbeLdQhIidnhzNvzT0cLh4W9SteA</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyC4UtM7sZM0ez7Ys-AEKmE1GWmOdlvzOjE</string>
 
     <string-array name="filter_options">
         <item>Date</item>
@@ -17,4 +17,14 @@
     <string name="cancel_tracking">Cancel Run</string>
     <string name="confirm_cancel">Are you sure to cancel the run?</string>
     <string name="run_saved">Run saved successfully</string>
+    <string name="fill_all">Please  fill all the fields</string>
+    <string name="saved_change">Changes Saved</string>
+    <string name="avg_speed_over_time">Average Speed Over Time</string>
+    <string name="calories_burnt">CALORIES BURNT</string>
+    <string name="distance">DISTANCE</string>
+    <string name="avg_speed">AVG SPEED</string>
+    <string name="duration">DURATION</string>
+    <string name="date">DATE</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
 </resources>
